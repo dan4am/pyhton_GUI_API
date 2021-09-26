@@ -4,6 +4,7 @@ from flask_restful import Api, Resource,reqparse,abort
 app = Flask(__name__)
 api = Api(app)
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:8452691@localhost/entreprise'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///entreprise-sqlite.db'
 
 video_put_args = reqparse.RequestParser()
 video_put_args.add_argument("name", type = str, help ="Name of the video is required", required =True)
