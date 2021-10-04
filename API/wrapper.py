@@ -1,3 +1,5 @@
+import datetime
+
 from sqlalchemy.orm import sessionmaker, Session
 import pymysql
 from sqlalchemy.ext.automap import automap_base
@@ -38,6 +40,32 @@ def get_user_by_id(id):
     except Exception as e:
         print(e)
         return False
+
+def add_user(fields):
+    try:
+        if fields['id'] == "" or fields['last_name'] == ""or fields['first_name'] == ""or fields['birthdate'] == "":
+            print("missing element")
+        else:
+            new_employee = Employee(id = fields['id'], first_name = fields['first_name'], last_name = fields['last_name'], birthdate = datetime.datetime.strptime(fields['birthdate'], '%Y-%m-%d') )
+            session.add(new_employee)
+            session.commit()
+            return True
+
+    except Exception as e:
+        print(e)
+        return False
+
+def delete_user(id):
+    try:
+        user_to_delete =  session.query(Employee).get(id)
+        session.delete(user_to_delete)
+        session.commit()
+        return True
+
+    except Exception as e:
+        print(e)
+        return False
+
 
 def get_all_users():
     try:

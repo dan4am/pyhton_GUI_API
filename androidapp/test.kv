@@ -1,0 +1,38 @@
+CanvasExample6:
+<CanvasExample6>:
+    Button:
+        canvas:
+            Rectangle:
+        text:"A"
+        pos:100,100
+
+<BoxLayoutExample>:
+    orientation : "vertical"
+    spacing: "10dp"
+    Button :
+        text : 'original'
+        size_hint :.5 , 1
+        pos_hint: {"center_x": .5}
+
+    BoxLayout:
+        orientation: "horizontal"
+        spacing:"10dp"
+        Button :
+            text : 'original 1'
+
+
+        Button :
+            text : 'original 2'
+        Button :
+            text : 'original 3'
+
+    AnchorLayout:
+        orientation : "vertical"
+        Button :
+            text : 'original 1'
+
+
+        Button :
+            text : 'original 2'
+        Button :
+            text : 'original 3'

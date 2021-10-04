@@ -43,4 +43,4 @@ def execute_external_sql_script_file(script_file_path):
 
 if __name__ == '__main__':
 
-    execute_external_sql_script_file('./testRecrutement.sql')
+    execute_external_sql_script_file('testRecrutement.sql')
