@@ -17,4 +17,3 @@ setuptools~=57.4.0
 MarkupSafe~=2.0.1
 idna~=3.2
 aniso8601~=8.0.0
-six~=1.16.0
